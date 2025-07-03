@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demetrius Moore - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particle background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">Demetrius Moore</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/introduction">About Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero section -->
+            <section class="hero">
+                <h1>Welcome to My Digital Portfolio</h1>
+                <p>I'm Demetrius Moore, a passionate Computer Engineering student at NC A&T State University, combining technical expertise with entrepreneurial vision.</p>
+                <img src="./img/img1.jpg" alt="Demetrius Moore" class="profile-image floating">
+            </section>
+
+            <!-- About section -->
+            <section class="content-section">
+                <h2>About Me</h2>
+                <p>Hello! I'm Demetrius Moore, a senior Computer Engineering student at North Carolina A&T State University. My journey in technology is driven by curiosity and a passion for innovation. Beyond academics, I enjoy reading, staying physically active at the gym, exploring culinary arts, and continuously learning new skills. As an entrepreneur, I believe in creating solutions that make a difference in people's lives.</p>
+                <p>My multidisciplinary approach combines technical proficiency with creative problem-solving, preparing me to tackle the challenges of tomorrow's digital landscape.</p>
+            </section>
+
+            <!-- Current courses -->
+            <section class="content-section">
+                <h2>Current Academic Focus</h2>
+                <p>This semester, I'm diving deep into advanced topics that bridge theory and practical application:</p>
+                <ul class="course-list">
+                    <li><strong>COMP 350</strong> - Advanced Computer Systems & Architecture</li>
+                    <li><strong>COMP 322</strong> - Software Engineering Principles & Practices</li>
+                </ul>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="content-section" style="text-align: center;">
+                <h2>Let's Connect</h2>
+                <p>Ready to explore my technical skills, education, and professional experiences? Discover more about my journey and what I bring to the table.</p>
+                <a href="./introduction" class="cta-button">Explore My Background</a>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Particle animation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            document.getElementById('particles').appendChild(particle);
+
+            // Remove particle after animation
+            setTimeout(() => {
+                particle.remove();
+            }, 25000);
+        }
+
+        // Create particles continuously
+        setInterval(createParticle, 3000);
+
+        // Create initial particles
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createParticle, i * 1000);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

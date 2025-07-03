@@ -1,0 +1,21 @@
+{
+  "name": "demetrius-moore-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Demetrius Moore - Computer Engineering Student",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "Demetrius Moore",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "computer-engineering",
+    "nodejs",
+    "professional-website"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
